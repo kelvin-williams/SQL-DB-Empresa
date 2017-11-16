@@ -3,7 +3,6 @@ CREATE DATABASE Empresa;
 USE Empresa;
 
 
-
 CREATE TABLE Pais (
 	sigla CHAR(2) NOT NULL,
 	nome CHAR(40),
@@ -83,35 +82,13 @@ CREATE TABLE Cliente (
 	FOREIGN KEY (Cidade,Uf,Pais) REFERENCES Cidade(Codigo,Uf,Pais)
 );
 
-CREATE TABLE Pedido(
-	Codigo INT AUTO_INCREMENT NOT NULL,
-	Cliente SMALLINT NOT NULL,
-	data_pedido DATETIME NOT NULL,
-	Total DOUBLE(15,2),
-	situacao CHAR(1),
-	vendedor INT,
-	PRIMARY KEY(Codigo),
-	FOREIGN KEY (Cliente) REFERENCES Cliente(Codigo)
-);
-
-
-CREATE TABLE Itens_Pedido(
-	Pedido INT NOT NULL,
-	Produto SMALLINT NOT NULL,
-	Quant NUMERIC(10,3) NOT NULL,
-	Total DOUBLE(15,2),
-	situacao CHAR(1),
-	PRIMARY KEY(Pedido,Produto),
-	FOREIGN KEY (Produto) REFERENCES Produto(Codigo)
-);
-
 
 CREATE TABLE Funcionario(
 	Codigo INT AUTO_INCREMENT NOT NULL,
 	Nome CHAR(30) NOT NULL,
 	Sexo CHAR(1) NOT NULL,
 	Setor SMALLINT NOT NULL,
-	ramal_individual CHAR(4) NOT NULL,
+	ramal_individual CHAR(4),
 	estado_civil CHAR(1) NOT NULL,
 	data_nascimento DATETIME NOT NULL,
 	rg_numero CHAR(15),
@@ -133,14 +110,35 @@ CREATE TABLE Funcionario(
 	Email CHAR(40),
 	Salario DOUBLE(15,2) NOT NULL,
 	PRIMARY KEY(Codigo),
-	
 	FOREIGN KEY(nacionalidade) REFERENCES Pais(sigla),
 	FOREIGN KEY(naturalidade) REFERENCES Cidade(Codigo),
 	FOREIGN KEY(Cidade,Uf) REFERENCES Cidade(Codigo,Uf),
 	FOREIGN KEY(Funcao) REFERENCES Funcao(Codigo)
 );
 
+CREATE TABLE Pedido(
+	Codigo INT AUTO_INCREMENT NOT NULL,
+	Cliente SMALLINT NOT NULL,
+	data_pedido DATETIME NOT NULL,
+	Total DOUBLE(15,2),
+	situacao CHAR(1),
+	vendedor INT,
+	PRIMARY KEY(Codigo),
+	FOREIGN KEY(Cliente) REFERENCES Cliente(Codigo),
+	FOREIGN KEY(vendedor) REFERENCES Funcionario(Codigo)
+);
 
+
+CREATE TABLE Itens_Pedido(
+	Pedido INT NOT NULL,
+	Produto SMALLINT NOT NULL,
+	Quant NUMERIC(10,3) NOT NULL,
+	Total DOUBLE(15,2),
+	situacao CHAR(1),
+	PRIMARY KEY(Pedido,Produto),
+	FOREIGN KEY(Pedido) REFERENCES Pedido(Codigo),
+	FOREIGN KEY(Produto) REFERENCES Produto(Codigo)
+);
 
 CREATE TABLE Setor(
 	Codigo SMALLINT AUTO_INCREMENT NOT NULL,
@@ -156,7 +154,5 @@ CREATE TABLE Setor(
 
 
 ALTER TABLE Funcionario ADD FOREIGN KEY(Setor) REFERENCES Setor(Codigo);
-
-
 
 
