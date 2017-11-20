@@ -77,10 +77,11 @@ INSERT INTO Funcao (Codigo,Nome,Salario) VALUES ('','Designer','1000');
 INSERT INTO Funcao (Codigo,Nome,Salario) VALUES ('','CEO','10000');
 
 --Tipo_Produto
-INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Pastilha de Freio');
-INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Amortecedor');
-INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Caixa de Marcha');
-INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Banco');
+INSERT INTO Tipo_Produto (Codigo,Nome) VALUES (1,'Pastilha de Freio');
+INSERT INTO Tipo_Produto (Codigo,Nome) VALUES (2,'Amortecedor');
+INSERT INTO Tipo_Produto (Codigo,Nome) VALUES (3,'Filtros');
+INSERT INTO Tipo_Produto (Codigo,Nome) VALUES (4,'Som');
+INSERT INTO Tipo_Produto (Codigo,Nome) VALUES (5,'Pneu e Roda');
 INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Volante');
 INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Cano de Escape');
 INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Motor');
@@ -89,16 +90,20 @@ INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Farol');
 INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Carburador');
 
 --Produto
+--https://www.tudopracarro.com.br/lista-de-pecas <- Link com nome de peças de carro
+-- Tipo 2: Amortecedores
+-- Tipo 3: Filtros
+-- TIpo 4: Som
 --(Codigo,Nome,Tipo,Unidade,estoque_real,estoque_virtual,estoque_minimo,Custo,Venda)
-INSERT INTO Produto VALUES ('','Pastilha de Freio KK-27 para UNO 2017',1,'QTD',20,'','',70,200);
-INSERT INTO Produto VALUES ('','','','','','','','','');
-INSERT INTO Produto VALUES ('','','','','','','','','');
-INSERT INTO Produto VALUES ('','','','','','','','','');
-INSERT INTO Produto VALUES ('','','','','','','','','');
-INSERT INTO Produto VALUES ('','','','','','','','','');
-INSERT INTO Produto VALUES ('','','','','','','','','');
-INSERT INTO Produto VALUES ('','','','','','','','','');
-INSERT INTO Produto VALUES ('','','','','','','','','');
+INSERT INTO Produto VALUES ('','Pastilha de Freio',1,'QTD',20,'','',70,200);
+INSERT INTO Produto VALUES ('','Amortecedor dianteiro',2,'',90,85,80,200,400);
+INSERT INTO Produto VALUES ('','Bandeija de suspensão',2,'',50,40,30,250,300);
+INSERT INTO Produto VALUES ('','Filtro da cabine',3,'',60,50,40,150,200);
+INSERT INTO Produto VALUES ('','Filtro de óleo',3,'',80,80,50,175,310);
+INSERT INTO Produto VALUES ('','Purificador de ar',3,'',120,117,115,65,150);
+INSERT INTO Produto VALUES ('','Alto-Falante',4,'',94,90,35,45,105);
+INSERT INTO Produto VALUES ('','Cilindro da roda',5,'',115,111,100,130,215);
+INSERT INTO Produto VALUES ('','Pneu aro 14',5,'',340,230,200,140,220);
 INSERT INTO Produto VALUES ('','','','','','','','','');
 INSERT INTO Produto VALUES ('','','','','','','','','');
 INSERT INTO Produto VALUES ('','','','','','','','','');
@@ -113,26 +118,25 @@ INSERT INTO Produto VALUES ('','','','','','','','','');
 
 --Cliente
 --Cliente (Codigo,cgc_cpf,Tipo,razao_social,tipo_logradouro,Logradouro,Complemento,Bairro,Cidade,Uf,Pais,Cep,Fone,Contato,Fax,insc_est,Email, Obs)
-INSERT INTO Cliente VALUES ('','54131462177','F','Ednaldo Pereira',			'PRA','Praça Pereira',		'Prédio Manhole',	'Centro',		'1','PB',	'BR',	'75412365','789(555)96157666','Pereira Ednaldo','','35772','ednaldo.chance@yahoo.com.br','Ednaldo Pereira');
-INSERT INTO Cliente VALUES ('','84941777411','F','Junji Ito',				'AVE','RUA',				'',					'Centro',		'1','PB',	'BR',	'78459632','789(555)89564666','Oti Ijnuj',		'','343271', '','');
-INSERT INTO Cliente VALUES ('','33625417756','F','Rodrigo A. Derlan',		'AVE','',					'',					'Centro',		'1','PB',	'BR',	'78456932','789(555)96158569','Rodrigo ADE',		'','46575','rodrigo.cervejao@ade.gov','Não fecha negócio com Milone');
-INSERT INTO Cliente VALUES ('','78546314824','F','Miguel T. Mercator',		'AVE','',					'',					'Bancários',	'2','',		'',	'78123546','789(222)98745123','Michel Teme',		'','','','');
-INSERT INTO Cliente VALUES ('','16846515256','J','Zurich Motors',			'ROD','BR-101',				'',					'Centro',		'3','',		'',	'96325874','789(222)99957666','Kratos',			'','','','');
-INSERT INTO Cliente VALUES ('','58441321783','J','Autoban Kars',			'ROD','',					'',					'Centro',		'4','',		'',	'12548963','789(555)96895471','Bob Osama bin-Alan','','','','Devendo Dinheiro');
-INSERT INTO Cliente VALUES ('','54941651847','J','Zhe Mobilikaizer',		'ROD','',					'',					'Centro',		'1','PB',	'BR',	'63258974','789(555)36251478','Angel Merk',		'','78956','','');
-INSERT INTO Cliente VALUES ('','64979432168','F','Alfredo Jr.',				'PRA','',					'',					'Mangue',		'1','',		'',	'96587412','789(222)99565841','Valfredo Filho',	'','','','');
-INSERT INTO Cliente VALUES ('','42378673444','F','Kevin K. Garcia',			'ROD','BR-102',				'',					'Centro',		'1','',		'',	'96587412','789(555)78945612','Willaim Bernardo','','','','');
-INSERT INTO Cliente VALUES ('','49651611695','J','Montadora do Zé',			'ROD','',					'',					'Centro',		'7','',		'',	'65987312','789(666)96325147','Zé',					'','','suc@ta.com','');
-INSERT INTO Cliente VALUES ('','51687691127','J','Sucataria Novo Hamburgo',	'AVE','',					'',					'Torre',			'1','PB',	'BR',	'96581243','789(555)55555555','Bolingo',			'','96383','','');
-INSERT INTO Cliente VALUES ('','4532896.434','J','Koka-Kola Distribuidora',	'AVE','',					'',					'Mangabeira',	'2','',		'',	'65234178','789(555)12789654','Kornell Boris',	'','','','');
-INSERT INTO Cliente VALUES ('','45456789765','F','Ariel Alves',				'ROD','',					'',					'Torre',			'1','',		'',	'96325416','789(666)99999995','Gabriel Flaig',	'','','','');
-INSERT INTO Cliente VALUES ('','78671456456','F','A. L. André',				'ROD','BR-230',				'',					'Timbó',			'1','',		'BR',	'99996587','789(555)56457889','Andrei Ankovitch','','6666','','');
-INSERT INTO Cliente VALUES ('','78655556564','F','Murilo B. Malravelinsky',	'AVE','',					'',					'Centro',		'2','',		'',	'32654178','789(555)22357742','Senhora Malravelinsky','','','','');
-INSERT INTO Cliente VALUES ('','12356789564','F','Tereza T. Rezinha',		'ROD','',					'',					'Centro',		'7','',		'',	'99999987','789(555)69584714','Lori',				'','','','');
-INSERT INTO Cliente VALUES ('','12356784563','J','FIB Auto Montadora',		'ROD','',					'',					'Mangue',		'2','',		'',	'66655598','789(111)69596969','Donald Vlad',		'','','','');
-INSERT INTO Cliente VALUES ('','45645647878','J','AUTOCAR Peças',			'AVE','',					'Pavilhão 27',		'Bancários',	'1','',		'',	'12345678','789(555)26154859','Marcos T. Opper','','','','');
-INSERT INTO Cliente VALUES ('','45678656456','F','Hellen Castro P.',		'AVE','',					'',					'Geisel',		'1','PB',	'BR',	'98453716','789(666)59621547','Oscar Alho',		'','123778','','');
-INSERT INTO Cliente VALUES ('','54678978978','F','Veruska T. Rump',			'AVE','',					'Torre 2',			'Torre',			'1','PB',	'BR',	'98453216','789(555)96362519','Obongo bin-Tupi','','763783','','Não confiável');
-
+INSERT INTO Cliente VALUES ('','54131462177','F','Ednaldo Pereira','PRA','Praça Pereira', 'Prédio Manhole','Centro','1','PB','BR','75412365','789(555)96157666','Pereira Ednaldo','','35772','ednaldo.chance@yahoo.com.br','Ednaldo Pereira');
+INSERT INTO Cliente VALUES ('','84941777411','F','Junji Ito', 'AVE','RUA', '','Centro','1','PB','BR','78459632','789(555)89564666','Oti Ijnuj','','343271', '','');
+INSERT INTO Cliente VALUES ('','33625417756','F','Rodrigo A. Derlan','AVE','','','Centro','1','PB','BR','78456932','789(555)96158569','Rodrigo ADE','','46575','rodrigo.cervejao@ade.gov','Não fecha negócio com Milone');
+INSERT INTO Cliente VALUES ('','78546314824','F','Miguel T. Mercator','AVE','','','Bancários','2','','','78123546','789(222)98745123','Michel Teme','','','','');
+INSERT INTO Cliente VALUES ('','16846515256','J','Zurich Motors','ROD','BR-101','','Centro','3','','','96325874','789(222)99957666','Kratos','','','','');
+INSERT INTO Cliente VALUES ('','58441321783','J','Autoban Kars','ROD','','', 'Centro','4','','','12548963','789(555)96895471','Bob Osama bin-Alan','','','','Devendo Dinheiro');
+INSERT INTO Cliente VALUES ('','54941651847','J','Zhe Mobilikaizer','ROD','', '','Centro','1','PB','BR','63258974','789(555)36251478','Angel Merk','','78956','','');
+INSERT INTO Cliente VALUES ('','64979432168','F','Alfredo Jr.','PRA','', '','Mangue','1','','','96587412','789(222)99565841','Valfredo Filho','','','','');
+INSERT INTO Cliente VALUES ('','42378673444','F','Kevin K. Garcia','ROD','BR-102','','Centro','1','','','96587412','789(555)78945612','Willaim Bernardo','','','','');
+INSERT INTO Cliente VALUES ('','49651611695','J','Montadora do Zé','ROD','','','Centro','7','','','65987312','789(666)96325147','Zé','','','suc@ta.com','');
+INSERT INTO Cliente VALUES ('','51687691127','J','Sucataria Novo Hamburgo','AVE','','','Torre','1','PB','BR','96581243','789(555)55555555','Bolingo','','96383','','');
+INSERT INTO Cliente VALUES ('','4532896.434','J','Koka-Kola Distribuidora','AVE','''','Mangabeira','2','','','65234178','789(555)12789654','Kornell Boris','','','','');
+INSERT INTO Cliente VALUES ('','45456789765','F','Ariel Alves','ROD','','','Torre','1','','','96325416','789(666)99999995','Gabriel Flaig','','','','');
+INSERT INTO Cliente VALUES ('','78671456456','F','A. L. André','ROD','BR-230','','Timbó','1','','BR','99996587','789(555)56457889','Andrei Ankovitch','','6666','','');
+INSERT INTO Cliente VALUES ('','78655556564','F','Murilo B. Malravelinsky','AVE','','','Centro','2','','','32654178','789(555)22357742','Senhora Malravelinsky','','','','');
+INSERT INTO Cliente VALUES ('','12356789564','F','Tereza T. Rezinha','ROD','','','Centro','7','','','99999987','789(555)69584714','Lori', '','','','');
+INSERT INTO Cliente VALUES ('','12356784563','J','FIB Auto Montadora','ROD','','','Mangue','2','','','66655598','789(111)69596969','Donald Vlad','','','','');
+INSERT INTO Cliente VALUES ('','45645647878','J','AUTOCAR Peças','AVE','','Pavilhão 27','Bancários','1','','',    '12345678','789(555)26154859','Marcos T. Opper','','','','');
+INSERT INTO Cliente VALUES ('','45678656456','F','Hellen Castro P.','AVE','','','Geisel','1','PB','BR','98453716','789(666)59621547','Oscar Alho','','123778','','');
+INSERT INTO Cliente VALUES ('','54678978978','F','Veruska T. Rump','AVE','','Torre 2','Torre','1','PB','BR','98453216','789(555)96362519','Obongo bin-Tupi','','763783','','Não confiável');
 
 
