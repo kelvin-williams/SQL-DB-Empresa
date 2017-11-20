@@ -21,10 +21,10 @@ CREATE TABLE UF (
 
 CREATE TABLE Cidade (
 	Codigo INT AUTO_INCREMENT NOT NULL,
-	Uf CHAR(2) NOT NULL,
-	Pais CHAR(2) NOT NULL,
+	Uf CHAR(2),
+	Pais CHAR(2),
 	Nome CHAR(40),
-	PRIMARY KEY(Codigo,Uf,Pais),
+	PRIMARY KEY(Codigo),
 	FOREIGN KEY (Uf,Pais) REFERENCES UF(Sigla,pais)
 );
 
@@ -79,7 +79,8 @@ CREATE TABLE Cliente (
 	Email CHAR(40),
 	Obs TEXT,
 	PRIMARY KEY(Codigo),
-	FOREIGN KEY (Cidade,Uf,Pais) REFERENCES Cidade(Codigo,Uf,Pais)
+	FOREIGN KEY (Cidade) REFERENCES Cidade(Codigo),
+	FOREIGN KEY(Uf,Pais) REFERENCES UF(Sigla,pais)
 );
 
 
@@ -112,7 +113,8 @@ CREATE TABLE Funcionario(
 	PRIMARY KEY(Codigo),
 	FOREIGN KEY(nacionalidade) REFERENCES Pais(sigla),
 	FOREIGN KEY(naturalidade) REFERENCES Cidade(Codigo),
-	FOREIGN KEY(Cidade,Uf) REFERENCES Cidade(Codigo,Uf),
+	FOREIGN KEY(Cidade) REFERENCES Cidade(Codigo),
+	FOREIGN KEY(Uf) REFERENCES UF(Sigla),
 	FOREIGN KEY(Funcao) REFERENCES Funcao(Codigo)
 );
 
@@ -154,5 +156,3 @@ CREATE TABLE Setor(
 
 
 ALTER TABLE Funcionario ADD FOREIGN KEY(Setor) REFERENCES Setor(Codigo);
-
-
