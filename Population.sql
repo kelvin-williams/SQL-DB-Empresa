@@ -1,4 +1,4 @@
---Países
+/*Paises*/
 INSERT INTO Pais (sigla,nome) VALUES ('BR','Brasil');
 INSERT INTO Pais (sigla,nome) VALUES ('NZ','Nova Zelândia');
 INSERT INTO Pais (sigla,nome) VALUES ('DE','Alemanha');
@@ -20,7 +20,7 @@ INSERT INTO Pais (sigla,nome) VALUES ('FR','França');
 INSERT INTO Pais (sigla,nome) VALUES ('BE','Bélgica');
 INSERT INTO Pais (sigla,nome) VALUES ('CL','Chile');
 
---UF's
+/*UF's*/
 INSERT INTO UF (Sigla,pais,nome) VALUES ('PB','BR','Paraiba');
 INSERT INTO UF (Sigla,pais,nome) VALUES ('BA','BR','Bahia');
 INSERT INTO UF (Sigla,pais,nome) VALUES ('MG','BR','Minas Gerais');
@@ -42,7 +42,7 @@ INSERT INTO UF (Sigla,pais,nome) VALUES ('RO','BR','Rondônia');
 INSERT INTO UF (Sigla,pais,nome) VALUES ('GO','BR','Goiás');
 INSERT INTO UF (Sigla,pais,nome) VALUES ('SC','BR','Santa Catarina');
 
---Cidades
+/*Cidades*/
 INSERT INTO Cidade (Uf,Pais,Nome) VALUES ('PB','BR','Joao Pessoa');
 INSERT INTO Cidade (Uf,Pais,Nome) VALUES ('BA','BR','Salvador');
 INSERT INTO Cidade (Uf,Pais,Nome) VALUES ('MB','BR','Belo Horizonte');
@@ -64,8 +64,8 @@ INSERT INTO Cidade (Uf,Pais,Nome) VALUES ('RO','BR','Porto Velho');
 INSERT INTO Cidade (Uf,Pais,Nome) VALUES ('GO','BR','Goiânia');
 INSERT INTO Cidade (Uf,Pais,Nome) VALUES ('SC','BR','Florianópolis');
 
---Funcao
-INSERT INTO Funcao (Codigo,Nome,Salario) VALUES ('','Vendedor','500');
+/*Funcao*/
+INSERT INTO Funcao (Codigo,Nome,Salario) VALUES (,'Vendedor','500');
 INSERT INTO Funcao (Codigo,Nome,Salario) VALUES ('','Empacotador','500');
 INSERT INTO Funcao (Codigo,Nome,Salario) VALUES ('','Montador','600');
 INSERT INTO Funcao (Codigo,Nome,Salario) VALUES ('','Gerente','2000');
@@ -76,7 +76,7 @@ INSERT INTO Funcao (Codigo,Nome,Salario) VALUES ('','Secretario','900');
 INSERT INTO Funcao (Codigo,Nome,Salario) VALUES ('','Designer','1000');
 INSERT INTO Funcao (Codigo,Nome,Salario) VALUES ('','CEO','10000');
 
---Tipo_Produto
+/*Tipo_Produto*/
 INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Pastilha de Freio');
 INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Amortecedor');
 INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Filtros');
@@ -90,9 +90,9 @@ INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Roda');
 INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Farol');
 INSERT INTO Tipo_Produto (Codigo,Nome) VALUES ('','Carburador');
 
---Produto
---https://www.tudopracarro.com.br/lista-de-pecas <- Link com nome de peças de carro
---(Codigo,Nome,Tipo,Unidade,estoque_real,estoque_virtual,estoque_minimo,Custo,Venda)
+/*Produto
+https://www.tudopracarro.com.br/lista-de-pecas <- Link com nome de peças de carro
+(Codigo,Nome,Tipo,Unidade,estoque_real,estoque_virtual,estoque_minimo,Custo,Venda)*/
 INSERT INTO Produto VALUES ('','Pastilha de Freio',1,'QTD',20,'','',70,200);
 INSERT INTO Produto VALUES ('','Amortecedor dianteiro',2,'QNT',90,85,80,200,400);
 INSERT INTO Produto VALUES ('','Bandeija de suspensão',2,'QNT',50,40,30,250,300);
@@ -108,8 +108,8 @@ INSERT INTO Produto VALUES ('','Buzina',6,'QNT',150,145,132,10,25);
 INSERT INTO Produto VALUES ('','Kit vidro elétrico',6,'QNT',70,50,45,170,285);
 INSERT INTO Produto VALUES ('','Tapete do túnel',6,'QNT',175,143,122,24,56);
 
---Cliente
---Cliente (Codigo,cgc_cpf,Tipo,razao_social,tipo_logradouro,Logradouro,Complemento,Bairro,Cidade,Uf,Pais,Cep,Fone,Contato,Fax,insc_est,Email, Obs)
+/*Cliente
+Cliente (Codigo,cgc_cpf,Tipo,razao_social,tipo_logradouro,Logradouro,Complemento,Bairro,Cidade,Uf,Pais,Cep,Fone,Contato,Fax,insc_est,Email, Obs)*/
 INSERT INTO Cliente VALUES ('','54131462177','F','Ednaldo Pereira','PRA','Praça Pereira', 'Prédio Manhole','Centro','1','PB','BR','75412365','789(555)96157666','Pereira Ednaldo','','35772','ednaldo.chance@yahoo.com.br','Ednaldo Pereira');
 INSERT INTO Cliente VALUES ('','84941777411','F','Junji Ito', 'AVE','RUA', 'Casa','Centro','1','PB','BR','78459632','789(555)89564666','Oti Ijnuj','','343271', '','');
 INSERT INTO Cliente VALUES ('','33625417756','F','Rodrigo A. Derlan','AVE','RUA','Casa','Centro','1','PB','BR','78456932','789(555)96158569','Rodrigo ADE','','46575','rodrigo.cervejao@ade.gov','Não fecha negócio com Milone');
@@ -131,17 +131,17 @@ INSERT INTO Cliente VALUES ('','45645647878','J','AUTOCAR Peças','AVE','','Pavi
 INSERT INTO Cliente VALUES ('','45678656456','F','Hellen Castro P.','AVE','','','Geisel','1','PB','BR','98453716','789(666)59621547','Oscar Alho','','123778','','');
 INSERT INTO Cliente VALUES ('','54678978978','F','Veruska T. Rump','AVE','','Torre 2','Torre','1','PB','BR','98453216','789(555)96362519','Obongo bin-Tupi','','763783','','Não confiável');
 
--- Clientes de David
+/*Clientes de David*/
 INSERT INTO Cliente VALUES ('','41579614809','F','Samuel Antonio Gomes','RUA','Rua Deputado Balduíno Minervino de Carvalho, 610', 'Casa','Aeroclube','1','PB','BR','58036860','8336180750','Samuel Gomes','','35772','samueljoantoniogomes_@autvale.com','');
 
---Setores
---Setor(Codigo,Nome,Sigla,Ramal,superior,responsavel)
+/*Setores
+--Setor(Codigo,Nome,Sigla,Ramal,superior,responsavel)*/
 INSERT INTO Setor VALUES('','Setor Administrativo','ADM','100','','');
 INSERT INTO Setor VALUES('','Setor de Vendas','VDS','200',1,'');
 INSERT INTO Setor VALUES('','Setor de Recursos Humanos','RH','300',1,'');
 INSERT INTO Setor VALUES('','Setor Financeiro','FIN','400',2,'');
 INSERT INTO Setor VALUES('','Setor Operacional','OPR','500',1,'');
 
---Funcionarios
---Funcionario(Codigo,Nome,Sexo,Setor,ramal_individual,estado_civil,data_nascimento,rg_numero,nacionalidade,naturalidade,Cpf,sangue_fator,sangue_rh,tipo_logradouro,logradouro,complemento,Bairro,Cidade,Uf,Cep,Fone,Funcao,admissao,Email,Salario)
-INSERT INTO Funcionario('','Bruce Greene','M',1,'0045','S','1989-04-19 13:08:22','9488103','US',1,'76543234924','B','-','RUA','Rua Antonio Freitas, 450','Casa','Bancários',1,'PB','56038200','988420106',10,'2014-04-19 13:08:22','bruce@funhaus.com','5000');
+/*Funcionarios
+--Funcionario(Codigo,Nome,Sexo,Setor,ramal_individual,estado_civil,data_nascimento,rg_numero,nacionalidade,naturalidade,Cpf,sangue_fator,sangue_rh,tipo_logradouro,logradouro,complemento,Bairro,Cidade,Uf,Cep,Fone,Funcao,admissao,Email,Salario)*/
+INSERT INTO Funcionario VALUES ('','Bruce Greene','M',1,'0045','S','1989-04-19 13:08:22','9488103','US',1,'76543234924','B','-','RUA','Rua Antonio Freitas, 450','Casa','Bancários',1,'PB','56038200','988420106',10,'2014-04-19 13:08:22','bruce@funhaus.com','5000');
